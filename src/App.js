@@ -1,8 +1,8 @@
-import './App.css';
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
 import * as THREE from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
+import Portfolio from './Portfolio';
 
 class App extends Component {
     componentDidMount() {
@@ -22,16 +22,27 @@ class App extends Component {
             new THREE.SphereGeometry(3, 32, 32),
             new THREE.MeshStandardMaterial({ map: moonTexture, normalMap: normalTexture })
         )
+        moon.position.x = 30;
+        moon.position.y = 0;
         scene.add(moon);
+
+        const earthTexture = new THREE.TextureLoader().load('./img/earth.jpg');
+        const earth = new THREE.Mesh(
+            new THREE.SphereGeometry(12, 32, 32),
+            new THREE.MeshStandardMaterial({ map: earthTexture})
+        )
+        earth.position.x = 15;
+        earth.position.y = 15;
+        earth.position.z = -10;
+        scene.add(earth);
 
 
         const light = new THREE.HemisphereLight(0xffffbb);
         scene.add(light);
-        camera.position.z = 30;
-
+        camera.position.z = 50;
 
         function addStar() {
-            const geomerty = new THREE.SphereGeometry(0.25, 1, 1);
+            const geomerty = new THREE.SphereGeometry(0.25, 30, 30);
             const material = new THREE.MeshStandardMaterial({ color: 0xFFFFFF });
             const star = new THREE.Mesh(geomerty, material);
 
@@ -46,11 +57,24 @@ class App extends Component {
         const spaceTexture = new THREE.TextureLoader().load('./img/space.jpg');
         scene.background = spaceTexture;
 
+        function moveCamera() {
+            const t = document.body.getBoundingClientRect().top;
+
+            camera.position.z = 50 + t * -0.05;
+            camera.position.x = t * -0.0002;
+            camera.rotation.y = t * -0.0002;
+        }
+
+        document.body.onscroll = moveCamera;
+        moveCamera();
+
         const animate = function () {
             requestAnimationFrame(animate);
-            moon.rotation.x += 0.01;
-            moon.rotation.y += 0.005;
+            // moon.rotation.x += 0.01;
+            moon.rotation.y += 0.05;
             moon.rotation.z += 0.01;
+
+            earth.rotation.y += 0.005;
 
             controls.update();
             renderer.render(scene, camera);
@@ -59,7 +83,10 @@ class App extends Component {
     }
     render() {
         return (
-            <div ref={ref => (this.mount = ref)} />
+            <>
+                <Portfolio/>
+                <div ref={ref => (this.mount = ref)} />
+            </>
         )
     }
 }

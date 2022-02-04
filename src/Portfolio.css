@@ -1,0 +1,60 @@
+canvas {
+  position: fixed;
+  top : 0;
+  left : 0;
+}
+
+main {
+  width: 100vw;
+  color: white;
+  z-index: 99;
+  position: absolute;
+  width: 100%;
+  margin: 0px auto;
+  padding: 120px 0px;
+  
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+}
+
+header {
+  grid-column: 2 / 8;
+  font-size: 2.5rem;
+  padding: 2rem;
+  margin-bottom: 3rem;
+  background-color: rgba(28, 25, 25,0.7);
+  
+}
+
+header h3 {
+  margin-bottom: 0;
+  padding-bottom: 1rem;
+  margin-top: 1rem;
+}
+
+header p {
+  grid-column: 2 / 8;
+  font-size: 1.1rem;
+  line-height: 2;
+  padding-bottom: 0.2px;
+}
+
+section {
+  grid-column: 2 / 8;
+  padding: 2rem;
+  line-height: 1.5;
+  margin-bottom: 3rem;
+  background-color: rgba(28, 25, 25,0.7);
+}
+section h2 {
+  margin-top : 0;
+}
+section table {
+  width: 100%;
+  border-collapse: collapse;
+  padding-bottom: 2rem;
+  font-size: 1rem;
+}
+section th, td {
+  padding: 10px;
+}
