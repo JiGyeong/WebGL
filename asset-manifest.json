@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/webgl-space/static/css/main.c83857df.css",
+    "main.js": "/webgl-space/static/js/main.88e6b4ec.js",
+    "index.html": "/webgl-space/index.html",
+    "main.c83857df.css.map": "/webgl-space/static/css/main.c83857df.css.map",
+    "main.88e6b4ec.js.map": "/webgl-space/static/js/main.88e6b4ec.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c83857df.css",
+    "static/js/main.88e6b4ec.js"
+  ]
+}
