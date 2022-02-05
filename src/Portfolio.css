@@ -27,16 +27,20 @@ header {
 }
 
 header h3 {
+  font-size: 2rem;
   margin-bottom: 0;
-  padding-bottom: 1rem;
   margin-top: 1rem;
 }
 
 header p {
-  grid-column: 2 / 8;
-  font-size: 1.1rem;
+  font-size: 1rem;
   line-height: 2;
   padding-bottom: 0.2px;
+}
+
+header a {
+  /* border-radius: 10%; */
+margin-right: 10px;
 }
 
 section {
@@ -46,8 +50,17 @@ section {
   margin-bottom: 3rem;
   background-color: rgba(28, 25, 25,0.7);
 }
-section h2 {
+section h1 {
   margin-top : 0;
+}
+section h2 {
+  font-size: 1.2rem;
+}
+section h3 {
+  font-size: 1.1rem;
+}
+section p {
+  font-size: 0.9rem;
 }
 section table {
   width: 100%;
@@ -56,5 +69,10 @@ section table {
   font-size: 1rem;
 }
 section th, td {
-  padding: 10px;
+  padding: 5px;
+}
+
+section a{
+  text-decoration: none;
+  color : white;
 }

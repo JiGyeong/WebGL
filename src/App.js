@@ -22,7 +22,7 @@ class App extends Component {
             new THREE.SphereGeometry(3, 32, 32),
             new THREE.MeshStandardMaterial({ map: moonTexture, normalMap: normalTexture })
         )
-        moon.position.x = 30;
+        moon.position.x = 40;
         moon.position.y = 0;
         scene.add(moon);
 
@@ -31,7 +31,7 @@ class App extends Component {
             new THREE.SphereGeometry(12, 32, 32),
             new THREE.MeshStandardMaterial({ map: earthTexture})
         )
-        earth.position.x = 15;
+        earth.position.x = 25;
         earth.position.y = 15;
         earth.position.z = -10;
         scene.add(earth);
