@@ -36,23 +36,33 @@ class App extends Component {
         earth.position.z = -10;
         scene.add(earth);
 
+        const marsTexture = new THREE.TextureLoader().load('./img/mars.jpg');
+        const mars = new THREE.Mesh(
+            new THREE.SphereGeometry(13, 60, 60),
+            new THREE.MeshStandardMaterial({ map: marsTexture})
+        )
+        mars.position.x = 75;
+        mars.position.y = -45;
+        mars.position.z = 110;
+        scene.add(mars);
+
 
         const light = new THREE.HemisphereLight(0xffffbb);
         scene.add(light);
         camera.position.z = 50;
 
         function addStar() {
-            const geomerty = new THREE.SphereGeometry(0.25, 30, 30);
+            const geomerty = new THREE.SphereGeometry(0.2, 30, 30);
             const material = new THREE.MeshStandardMaterial({ color: 0xFFFFFF });
             const star = new THREE.Mesh(geomerty, material);
 
-            const [x, y, z] = new Array(3).fill().map(() => THREE.MathUtils.randFloatSpread(100));
+            const [x, y, z] = new Array(3).fill().map(() => THREE.MathUtils.randFloatSpread(200));
 
             star.position.set(x, y, z);
             scene.add(star);
         }
 
-        Array(200).fill().forEach(addStar);
+        Array(300).fill().forEach(addStar);
 
         const spaceTexture = new THREE.TextureLoader().load('./img/space.jpg');
         scene.background = spaceTexture;
@@ -75,6 +85,7 @@ class App extends Component {
             moon.rotation.z += 0.01;
 
             earth.rotation.y += 0.005;
+            mars.rotation.y += 0.005;
 
             controls.update();
             renderer.render(scene, camera);
