@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/webgl-space/static/css/main.7e2070cb.css",
-    "main.js": "/webgl-space/static/js/main.484f2510.js",
+    "main.js": "/webgl-space/static/js/main.75fd2630.js",
     "index.html": "/webgl-space/index.html",
     "main.7e2070cb.css.map": "/webgl-space/static/css/main.7e2070cb.css.map",
-    "main.484f2510.js.map": "/webgl-space/static/js/main.484f2510.js.map"
+    "main.75fd2630.js.map": "/webgl-space/static/js/main.75fd2630.js.map"
   },
   "entrypoints": [
     "static/css/main.7e2070cb.css",
-    "static/js/main.484f2510.js"
+    "static/js/main.75fd2630.js"
   ]
 }
